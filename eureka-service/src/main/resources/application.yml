@@ -1,0 +1,14 @@
+server:
+  port: 8761
+  servlet:
+    context-path: /registro
+spring:
+  application:
+    name: registro
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaltZone: http://localhost:${server.port}/eureka/

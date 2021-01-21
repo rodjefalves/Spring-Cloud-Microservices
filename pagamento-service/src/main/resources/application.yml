@@ -1,0 +1,46 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /pagamento
+spring:
+  application:
+    name: pagamento
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pagamento
+    username: postgres
+    password: postgres
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/registro/eureka
+
+
+pagamento:
+  seguranca:
+    jwtTokenConfig:
+      segredo: ${JWT_SECRET:crudapps}
+      expiracao: 432000
+      ##parametrizacao:
+      ##viaServico: ${PARAMETRIZACAO_VIA_SERVICO:false}
+      ##api-info:
+      ##titulo: Autenticação API
+      ##descricao: Documentação da API para acesso aos endpoints da autenticação
+      ##versao: 1.0
+      ##pacote: br.com.marketpay.autenticacao.api.application

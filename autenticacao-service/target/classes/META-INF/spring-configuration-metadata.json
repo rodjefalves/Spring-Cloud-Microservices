@@ -1,0 +1,82 @@
+{
+  "groups": [
+    {
+      "name": "autenticacao",
+      "type": "br.com.conductor.autenticacaoservice.config.ApplicationProperty",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty"
+    },
+    {
+      "name": "autenticacao.api-info",
+      "type": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$ApiInfo",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty",
+      "sourceMethod": "getApiInfo()"
+    },
+    {
+      "name": "autenticacao.parametrizacao",
+      "type": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$Parametrizacao",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty",
+      "sourceMethod": "getParametrizacao()"
+    },
+    {
+      "name": "autenticacao.seguranca",
+      "type": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$Seguranca",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty",
+      "sourceMethod": "getSeguranca()"
+    },
+    {
+      "name": "autenticacao.seguranca.jwt-token-config",
+      "type": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$JwtTokenConfig",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$Seguranca",
+      "sourceMethod": "getJwtTokenConfig()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "autenticacao.api-info.descricao",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$ApiInfo"
+    },
+    {
+      "name": "autenticacao.api-info.pacote",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$ApiInfo"
+    },
+    {
+      "name": "autenticacao.api-info.titulo",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$ApiInfo"
+    },
+    {
+      "name": "autenticacao.api-info.versao",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$ApiInfo"
+    },
+    {
+      "name": "autenticacao.base-url",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty"
+    },
+    {
+      "name": "autenticacao.parametrizacao.via-servico",
+      "type": "java.lang.Boolean",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$Parametrizacao",
+      "defaultValue": false
+    },
+    {
+      "name": "autenticacao.seguranca.jwt-token-config.expiracao",
+      "type": "java.lang.Long",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$JwtTokenConfig"
+    },
+    {
+      "name": "autenticacao.seguranca.jwt-token-config.segredo",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$JwtTokenConfig"
+    },
+    {
+      "name": "autenticacao.seguranca.usuario-sistema-token",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.autenticacaoservice.config.ApplicationProperty$Seguranca"
+    }
+  ],
+  "hints": []
+}

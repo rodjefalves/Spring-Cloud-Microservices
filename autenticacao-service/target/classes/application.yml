@@ -1,0 +1,47 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /security
+spring:
+  application:
+    name: auth
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth
+    username: postgres
+    password: postgres
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
+swagger:
+  enabled: true
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/registro/eureka
+
+security:
+  seguranca:
+    usuarioSistemaToken: ${USUARIO_SISTEMA_TOKEN:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaXN0ZW1hIiwiY3JlYXRlZCI6MTUzMTgzNDU0OTYyNiwicm9sZXMiOlsiUk9MRV9TSVNURU1BIl0sImlkIjoxfQ.zlAUVWwIvn7KViDKJymNhxc1PSbjQVi5XV5kw7xleabfmZJpbECOU5VYnHT1CBFHwxpNxHH0lpUl2bkvLqzhKA}
+    jwtTokenConfig:
+      segredo: ${JWT_SECRET:marketpay}
+      expiracao: 432000
+    api-info:
+    titulo: Autenticação API
+    descricao: Documentação da API para acesso aos endpoints da autenticação
+    versao: 1.0
+    pacote: br.com.conductor.autencicacaoservice
