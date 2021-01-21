@@ -1,0 +1,82 @@
+{
+  "groups": [
+    {
+      "name": "crud",
+      "type": "br.com.conductor.crudservice.config.ApplicationProperty",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty"
+    },
+    {
+      "name": "crud.api-info",
+      "type": "br.com.conductor.crudservice.config.ApplicationProperty$ApiInfo",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty",
+      "sourceMethod": "getApiInfo()"
+    },
+    {
+      "name": "crud.parametrizacao",
+      "type": "br.com.conductor.crudservice.config.ApplicationProperty$Parametrizacao",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty",
+      "sourceMethod": "getParametrizacao()"
+    },
+    {
+      "name": "crud.seguranca",
+      "type": "br.com.conductor.crudservice.config.ApplicationProperty$Seguranca",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty",
+      "sourceMethod": "getSeguranca()"
+    },
+    {
+      "name": "crud.seguranca.jwt-token-config",
+      "type": "br.com.conductor.crudservice.config.ApplicationProperty$JwtTokenConfig",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$Seguranca",
+      "sourceMethod": "getJwtTokenConfig()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "crud.api-info.descricao",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$ApiInfo"
+    },
+    {
+      "name": "crud.api-info.pacote",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$ApiInfo"
+    },
+    {
+      "name": "crud.api-info.titulo",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$ApiInfo"
+    },
+    {
+      "name": "crud.api-info.versao",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$ApiInfo"
+    },
+    {
+      "name": "crud.base-url",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty"
+    },
+    {
+      "name": "crud.parametrizacao.via-servico",
+      "type": "java.lang.Boolean",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$Parametrizacao",
+      "defaultValue": false
+    },
+    {
+      "name": "crud.seguranca.jwt-token-config.expiracao",
+      "type": "java.lang.Long",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$JwtTokenConfig"
+    },
+    {
+      "name": "crud.seguranca.jwt-token-config.segredo",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$JwtTokenConfig"
+    },
+    {
+      "name": "crud.seguranca.usuario-sistema-token",
+      "type": "java.lang.String",
+      "sourceType": "br.com.conductor.crudservice.config.ApplicationProperty$Seguranca"
+    }
+  ],
+  "hints": []
+}
