@@ -1,7 +1,7 @@
 package br.com.conductor.pagamentoservice.security;
 
 
-import br.com.conductor.pagamentoservice.service.MessageServiceImpl;
+import br.com.conductor.pagamentoservice.service.impl.MessageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

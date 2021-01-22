@@ -1,5 +1,6 @@
 package br.com.conductor.pagamentoservice.controller;
 
+import br.com.conductor.pagamentoservice.dto.ProdutoDTO;
 import br.com.conductor.pagamentoservice.entity.Produto;
 import br.com.conductor.pagamentoservice.entity.Venda;
 import br.com.conductor.pagamentoservice.feignclients.ProdutoFeignClient;

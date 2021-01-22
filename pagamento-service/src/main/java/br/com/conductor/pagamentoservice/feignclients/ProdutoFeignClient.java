@@ -1,6 +1,6 @@
 package br.com.conductor.pagamentoservice.feignclients;
 
-import br.com.conductor.pagamentoservice.controller.ProdutoDTO;
+import br.com.conductor.pagamentoservice.dto.ProdutoDTO;
 import br.com.conductor.pagamentoservice.entity.Produto;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;

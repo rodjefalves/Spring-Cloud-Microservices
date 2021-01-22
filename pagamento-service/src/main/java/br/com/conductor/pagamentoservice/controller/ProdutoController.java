@@ -1,7 +1,9 @@
 package br.com.conductor.pagamentoservice.controller;
 
 
+import br.com.conductor.pagamentoservice.dto.ProdutoDTO;
 import br.com.conductor.pagamentoservice.entity.Produto;
+import br.com.conductor.pagamentoservice.service.ProdutoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
