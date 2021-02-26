@@ -29,4 +29,4 @@ Trata-se de um sistema dividido em seis microsserviços:
   
 ## API's:
 
-![API's do sistema](URL da imagem)
+![API's do sistema](https://raw.githubusercontent.com/rodjefalves/Spring-Cloud-Microservices/main/img/rest.png)
