@@ -14,7 +14,7 @@ Trata-se de um sistema dividido em seis microsserviços:
 
 ## Arquitetura:
 
-![Arquitetura do sistema](URL da imagem)
+![Arquitetura do sistema](https://raw.githubusercontent.com/rodjefalves/Spring-Cloud-Microservices/main/img/arq1.png)
 
 ## Tecnologias utilizadas:
 
