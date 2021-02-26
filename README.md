@@ -4,12 +4,12 @@
 
 Trata-se de um sistema dividido em seis microsserviços:
 
-  - Serviço de autentivação: responsável pela autorização e autenticação dos usuários;
-  - Serviço CRUD: responsável por toda operação de cadastro, leitura, atualização e exclusão de produtos;
-  - Serviço de pagamento: responsável pelo controle de vendas, pagamentos, geração de relatórios e atua como Producer do message broker RabbitMQ;
-  - Serviço de estoque: atua como Consumer do message broker RabbitMQ atualizando estoque;
-  - Serviço de registro: responsável pelo registro dos microsserviços utilizando Netflix Eureka;
-  - Serviço de Gateway: atua no roteamento dinâmico utilizando Netflix Zuul.
+  - **Serviço de autentivação:** responsável pela autorização e autenticação dos usuários;
+  - **Serviço CRUD:** responsável por toda operação de cadastro, leitura, atualização e exclusão de produtos;
+  - **Serviço de pagamento:** responsável pelo controle de vendas, pagamentos, geração de relatórios e atua como Producer do message broker RabbitMQ;
+  - **Serviço de estoque:** atua como Consumer do message broker RabbitMQ atualizando estoque;
+  - **Serviço de registro:** responsável pelo registro dos microsserviços utilizando Netflix Eureka;
+  - **Serviço de Gateway:** atua no roteamento dinâmico utilizando Netflix Zuul.
  
 
 ## Arquitetura:
