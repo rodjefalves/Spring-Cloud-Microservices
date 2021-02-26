@@ -1,7 +1,8 @@
 package br.com.conductor.pagamentoservice.service.impl;
 
-import br.com.conductor.pagamentoservice.dto.ItemPedidoDTO;
-import br.com.conductor.pagamentoservice.dto.PedidoDTO;
+import br.com.conductor.pagamentoservice.rabbitmq.OrderQueueSender;
+import br.com.conductor.pagamentoservice.rest.dto.ItemPedidoDTO;
+import br.com.conductor.pagamentoservice.rest.dto.PedidoDTO;
 import br.com.conductor.pagamentoservice.entity.Cliente;
 import br.com.conductor.pagamentoservice.entity.ItemPedido;
 import br.com.conductor.pagamentoservice.entity.Pedido;
@@ -15,9 +16,11 @@ import br.com.conductor.pagamentoservice.repository.PedidoRepository;
 import br.com.conductor.pagamentoservice.repository.ProdutoRepository;
 import br.com.conductor.pagamentoservice.service.PedidoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +34,9 @@ public class PedidoServiceImpl implements PedidoService {
     private final ClienteRepository clientesRepository;
     private final ProdutoRepository produtosRepository;
     private final ItemPedidoRepository itemsPedidoRepository;
+
+    @Autowired
+    private OrderQueueSender orderQueueSender;
 
     @Override
     @Transactional
@@ -47,9 +53,43 @@ public class PedidoServiceImpl implements PedidoService {
         pedido.setStatus(StatusPedido.REALIZADO);
 
         List<ItemPedido> itemsPedido = converterItems(pedido, dto.getItems());
+
         repository.save(pedido);
         itemsPedidoRepository.saveAll(itemsPedido);
         pedido.setItens(itemsPedido);
+
+        int quant = pedido.getItens().size();
+
+        System.out.println("Quantidade: " + quant);
+
+        Double valorTotal = new Double(0);
+
+
+        for (int i = 0; i < quant; ++i) {
+
+            Double bdQuant = pedido.getItens().get(i).getQuantidade().doubleValue();
+            Double bdConvert = pedido.getItens().get(i).getProduto().getValor().doubleValue()*bdQuant;
+
+            System.out.println(bdConvert);
+
+            valorTotal += bdConvert;
+
+        }
+
+        System.out.println("Valor total: " + valorTotal);
+
+
+        //BigDecimal result = valor.multiply(BigDecimal.valueOf(serializedObj2));
+
+       //System.out.println("Resultado final: " + result);
+
+        BigDecimal valorTotalBD = new BigDecimal(valorTotal);
+
+        pedido.setTotal(valorTotalBD);
+
+        System.out.println(valorTotalBD);
+
+
         return pedido;
     }
 

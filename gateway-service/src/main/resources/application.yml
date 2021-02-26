@@ -29,7 +29,13 @@ zuul:
       custom-sensitive-headers: true
 
     auth:
-      path: /security/**
+      path: /auth/**
       service-id: auth
+      strip-prefix: false
+      custom-sensitive-headers: true
+
+    estoque:
+      path: /estoque/**
+      service-id: estoque
       strip-prefix: false
       custom-sensitive-headers: true

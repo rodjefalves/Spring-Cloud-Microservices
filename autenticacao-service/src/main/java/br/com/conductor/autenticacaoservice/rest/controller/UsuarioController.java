@@ -45,13 +45,6 @@ public class UsuarioController {
         return usuarioService.salvar(dto);
     }
 
-    @GetMapping("/testeGetToken")
-    public String testeGetToken(){
-        String tokenTxt = tokenUtil.getUsername("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqdXJlbWEiLCJjcmVhdGVkIjozMjQsInJvbGVzIjpbIlJPTEVfU0lTVEVNQSJdLCJpZCI6MjIyMjIyMjIyMjIyMjIyfQ.uD_P_gSSmn_2xerFZOK31McE-wSHD7kW258MqxF_-nqtR58DUFS_EMVzG4pMs7IVF8IKdOH0beD80KgIq3IYww");
-        //String tokenTxt = "TEste";
-        return tokenTxt;
-    }
-
     @ApiOperation(value = "Autenticar usuário")
     @PostMapping("/api/usuarios/auth")
     public TokenDTO autenticar(@RequestBody CredenciaisDTO credenciais){
@@ -65,12 +58,6 @@ public class UsuarioController {
         } catch (UsernameNotFoundException | SenhaInvalidaException e ){
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage());
         }
-    }
-
-    @ApiOperation(value = "Testar token JWT")
-    @GetMapping("/api/teste-auth")
-    public String TestarAuth(){
-        return "Autenticação JWT funcionou";
     }
 
 }

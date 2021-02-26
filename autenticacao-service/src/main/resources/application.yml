@@ -1,7 +1,7 @@
 server:
   port: 8083
   servlet:
-    context-path: /security
+    context-path: /auth
 spring:
   application:
     name: auth
@@ -15,7 +15,7 @@ spring:
   jmx:
     enabled: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/auth
+    url: jdbc:postgresql://localhost:5432/tempdb
     username: postgres
     password: postgres
   rabbitmq:
@@ -34,14 +34,25 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/registro/eureka
 
-security:
+##security:
+  ##seguranca:
+    ##usuarioSistemaToken: ${USUARIO_SISTEMA_TOKEN:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaXN0ZW1hIiwiY3JlYXRlZCI6MTUzMTgzNDU0OTYyNiwicm9sZXMiOlsiUk9MRV9TSVNURU1BIl0sImlkIjoxfQ.zlAUVWwIvn7KViDKJymNhxc1PSbjQVi5XV5kw7xleabfmZJpbECOU5VYnHT1CBFHwxpNxHH0lpUl2bkvLqzhKA}
+    ##jwtTokenConfig:
+      ##segredo: ${JWT_SECRET:marketpay}
+      ##expiracao: 432000
+  ##api-info:
+    ##titulo: Autenticação API
+    ##descricao: Documentação da API para acesso aos endpoints da autenticação
+    ##versao: 1.0
+    ##pacote: br.com.conductor.autencicacaoservice
+
+auth:
   seguranca:
-    usuarioSistemaToken: ${USUARIO_SISTEMA_TOKEN:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaXN0ZW1hIiwiY3JlYXRlZCI6MTUzMTgzNDU0OTYyNiwicm9sZXMiOlsiUk9MRV9TSVNURU1BIl0sImlkIjoxfQ.zlAUVWwIvn7KViDKJymNhxc1PSbjQVi5XV5kw7xleabfmZJpbECOU5VYnHT1CBFHwxpNxHH0lpUl2bkvLqzhKA}
     jwtTokenConfig:
-      segredo: ${JWT_SECRET:marketpay}
+      segredo: ${JWT_SECRET:crudapps}
       expiracao: 432000
-    api-info:
+  api-info:
     titulo: Autenticação API
-    descricao: Documentação da API para acesso aos endpoints da autenticação
+    descricao: Documentação da API para acesso aos endpoints de Autenticação
     versao: 1.0
-    pacote: br.com.conductor.autencicacaoservice
+    pacote: br.com.conductor.autenticacaoservice.rest.controller

@@ -20,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Swagger implements SwaggerResourcesProvider {
 
     private static final String DOCS_URI = "/v2/api-docs";
-    private static final String DOCS_VERSION = "2.0";
+    private static final String DOCS_VERSION = "1.0";
 
     @Autowired
     private RoutesEndpoint routesEndpoint;

@@ -3,7 +3,7 @@ package br.com.conductor.autenticacaoservice.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties("autenticacao")
+@ConfigurationProperties("auth")
 public class ApplicationProperty {
 
     private Seguranca seguranca = new Seguranca();

@@ -32,7 +32,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/api/usuarios",
             "/api/usuarios/auth",
             "/actuator/**",
-            "/api/produtos/teste"
+            "/api/produtos/teste",
+            "/api/produtos",
+            "/api/produtos/rabbit"
     };
 
     @Autowired

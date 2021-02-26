@@ -1,6 +1,6 @@
 package br.com.conductor.pagamentoservice.service;
 
-import br.com.conductor.pagamentoservice.dto.PedidoDTO;
+import br.com.conductor.pagamentoservice.rest.dto.PedidoDTO;
 import br.com.conductor.pagamentoservice.entity.Pedido;
 import br.com.conductor.pagamentoservice.enums.StatusPedido;
 

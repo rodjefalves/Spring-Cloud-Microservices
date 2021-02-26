@@ -15,14 +15,14 @@ spring:
   jmx:
     enabled: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/pagamento
+    url: jdbc:postgresql://localhost:5432/tempdb
     username: postgres
     password: postgres
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: admin
-    password: admin
+  #rabbitmq:
+    #host: localhost
+    #port: 5672
+    #username: admin
+    #password: admin
 
 eureka:
   instance:
@@ -37,10 +37,8 @@ pagamento:
     jwtTokenConfig:
       segredo: ${JWT_SECRET:crudapps}
       expiracao: 432000
-      ##parametrizacao:
-      ##viaServico: ${PARAMETRIZACAO_VIA_SERVICO:false}
-      ##api-info:
-      ##titulo: Autenticação API
-      ##descricao: Documentação da API para acesso aos endpoints da autenticação
-      ##versao: 1.0
-      ##pacote: br.com.marketpay.autenticacao.api.application
+  api-info:
+    titulo: Pagamento API
+    descricao: Documentação da API para acesso aos endpoints de pagamento
+    versao: 1.0
+    pacote: br.com.conductor.pagamentoservice.rest.controller

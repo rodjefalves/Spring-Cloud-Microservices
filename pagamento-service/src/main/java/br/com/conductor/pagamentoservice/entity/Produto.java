@@ -1,6 +1,10 @@
 package br.com.conductor.pagamentoservice.entity;
+
 import lombok.*;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Getter
@@ -25,7 +29,4 @@ public class Produto {
 
     @Column(name = "valor", nullable = false, length = 10)
     private BigDecimal valor;
-
-    //@ManyToOne
-    //private Venda venda;
 }
